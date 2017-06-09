@@ -19,5 +19,8 @@
     "qunit"
   ],
   "author": "Sergei Startsev",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "stacktrace-js": "^2.0.0"
+  }
 }
