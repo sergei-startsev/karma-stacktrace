@@ -1,0 +1,23 @@
+{
+  "name": "karma-humanity-stack",
+  "version": "0.0.1",
+  "description": "Provides humanity stack traces for karma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergei-startsev/karma-humanity-stack"
+  },
+  "keywords": [
+    "stacktrace",
+    "sourcemaps",
+    "stack",
+    "karma",
+    "jasmine",
+    "qunit"
+  ],
+  "author": "Sergei Startsev",
+  "license": "MIT"
+}
