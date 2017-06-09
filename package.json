@@ -25,5 +25,8 @@
   },
   "peerDependencies": {
     "karma": ">=0.13"
+  },
+  "engines": {
+    "node": ">= 6.4.0"
   }
 }
