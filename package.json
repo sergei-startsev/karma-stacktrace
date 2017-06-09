@@ -22,5 +22,8 @@
   "license": "MIT",
   "dependencies": {
     "stacktrace-js": "^2.0.0"
+  },
+  "peerDependencies": {
+    "karma": ">=0.13"
   }
 }
