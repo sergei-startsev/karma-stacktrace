@@ -20,7 +20,7 @@ The framework is designed to catch failed tests and provide sourcemapped stacktr
 `npm install karma-stacktrace`
 
 ### Karma configuraton
-Add `karma-stacktrace` to a list of frameworks in corresponding karma configuration:
+Add `stacktrace` to a list of frameworks in a corresponding karma configuration:
 
 ```js
 //karma.conf.js
