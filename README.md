@@ -27,7 +27,7 @@ Add `karma-stacktrace` to a list of frameworks in corresponding karma configurat
 module.exports = function(config) {
   config.set({
     //...
-    frameworks: ['karma-stacktrace'],
+    frameworks: ['stacktrace'],
     //...
   });
 };
@@ -35,7 +35,7 @@ module.exports = function(config) {
 
 ## Limitations
 - At the moment the framework supports only [Jasmine](http://jasmine.github.io/) and [QUnit](https://qunitjs.com/) testing frameworks.
-- The framework attaches isolated reporters to provide sourcemapped stacktraces, so it doesnt affect original stacktraces.
+- The framework attaches isolated reporters to provide sourcemapped stacktraces, so it does not affect original stacktraces.
 
 ## Inspired by
 - [sourcemapped-stacktrace](https://github.com/novocaine/sourcemapped-stacktrace)
