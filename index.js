@@ -1,5 +1,5 @@
 const initializeFramework = require('./lib');
 
 module.exports = {
-    'framework:humanity-stack': ['factory', initializeFramework]
+    'framework:stacktrace': ['factory', initializeFramework]
 };
