@@ -1,7 +1,7 @@
 {
   "name": "karma-stacktrace",
   "version": "0.0.1",
-  "description": "Provides humanity stack traces for karma",
+  "description": "Provides human-readable sourcemapped stacktrace for karma running in a browser.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
