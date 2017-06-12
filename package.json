@@ -1,6 +1,6 @@
 {
   "name": "karma-stacktrace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides human-readable sourcemapped stacktrace for karma running in a browser.",
   "main": "index.js",
   "scripts": {
