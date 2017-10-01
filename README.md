@@ -1,4 +1,6 @@
 # karma-stacktrace
+[![npm](https://img.shields.io/npm/v/karma-stacktrace.svg?style=flat-square)]()
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/sergei-startsev/karma-stacktrace/master/LICENSE)
 
 ## What
 This is a karma framework for providing human-readable sourcemapped stacktraces in a browser.
