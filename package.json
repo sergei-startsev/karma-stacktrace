@@ -1,7 +1,7 @@
 {
   "name": "karma-stacktrace",
-  "version": "1.0.3",
-  "description": "Provides human-readable sourcemapped stacktrace for karma running in a browser.",
+  "version": "2.0.0",
+  "description": "Provides readable mapped stacktrace for failed tests to debug the them in your browser.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +24,7 @@
     "stacktrace-js": "^2.0.0"
   },
   "peerDependencies": {
-    "karma": ">=0.13"
+    "karma": ">=1.0.0"
   },
   "engines": {
     "node": ">= 6.4.0"
