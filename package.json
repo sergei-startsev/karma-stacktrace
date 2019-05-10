@@ -28,5 +28,9 @@
   },
   "engines": {
     "node": ">= 6.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "prettier": "^1.17.0"
   }
 }
