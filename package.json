@@ -4,12 +4,16 @@
   "description": "Provides readable mapped stacktrace for failed tests to debug the them in your browser.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "pretty": "prettier ./lib/**/*.js --list-different",
+    "lint": "eslint ./"
+  }, 
   "repository": {
     "type": "git",
     "url": "https://github.com/sergei-startsev/karma-stacktrace"
   },
+  "files": [
+    "lib/"
+  ],
   "keywords": [
     "stacktrace",
     "sourcemap",
