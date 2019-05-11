@@ -3,29 +3,34 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/sergei-startsev/karma-stacktrace/master/LICENSE)
 
 ## What
-This is a karma framework for providing human-readable sourcemapped stacktraces in a browser.
+Provides readable mapped stacktrace for failed tests to debug the them in your browser.
 
-## Why
-Popular test frameworks ([Jasmine](http://jasmine.github.io/), [QUnit](https://qunitjs.com/)) uses [non-standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack) `stack` property of `Error` objects to output a trace when unit tests fail for some reasons. Stacktraces are intended to assist in understanding causes of failed tests, but they become useless without applied sourcemaps. Modern browsers support sourcemaps when viewing stacktraces from **errors** in their native console, but there is no support for applying sourcemaps to the `Error.prototype.stack`.
+## Motivation
+Test frameworks like [QUnit](https://qunitjs.com/) and [Jasmine](http://jasmine.github.io/) use [non-standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack) `stack` property of `Error` object to output a stacktrace for failed unit tests. Modern browsers do not apply sourcemaps to `Error.prototype.stack` and unmapped stacktrace looks useless.
 
-Exampled of an unmapped stacktrace for a failed test:
+An example of an unmapped stacktrace:
 
 ![Unmapped stacktrace](./unmapped-stacktrace.png "Unmapped stacktrace")
 
-The framework is designed to catch failed tests and provide sourcemapped stacktraces by using [stacktrace-js](https://www.stacktracejs.com/) library. It also clears stacktraces from usually useless traces of a testing framework. At the same time it does not affect original stacktraces.
+The framework catches failed tests and reports mapped stacktrace by using [stacktrace-js](https://www.stacktracejs.com/) library:
 
 ![Mapped stacktrace](./mapped-stacktrace.png "Mapped stacktrace")
 
 
-## How
-### Install
-`npm install karma-stacktrace`
+## Install
+Install with `yarn`:
 
-### Karma configuraton
-Add `stacktrace` to a list of frameworks in a corresponding karma configuration:
+`yarn add  karma-stacktrace`
+
+With `npm`:
+
+`npm install karma-stacktrace` 
+
+## Karma configuration
+Add `stacktrace` to the list of frameworks for a corresponding karma configuration:
 
 ```js
-//karma.conf.js
+// karma.conf.js
 module.exports = function(config) {
   config.set({
     //...
@@ -35,9 +40,27 @@ module.exports = function(config) {
 };
 ```
 
-## Limitations
+To avoid blocking the main execution thread of a web application [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) are used by default for parsing/mapping stacktrace, however you can disable it (you might need it for inline sourcemaps):
+
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    //...
+    client: {
+      stacktrace: {
+        useWorker: false
+      }
+    },
+    //...
+  });
+};
+```
+
+## Limitations/Gotchas
 - At the moment the framework supports only [Jasmine](http://jasmine.github.io/) and [QUnit](https://qunitjs.com/) testing frameworks.
-- The framework attaches isolated reporters to provide sourcemapped stacktraces, so it does not affect original stacktraces.
+- The framework attaches isolated reporters to trace mapped stacktrace, it **does not affect** stacktrace in original messages.
+- It is recommended to set `useWorker` option to `false` value for inline sourcemaps to get mapped stacktrace.
 
 ## Inspired by
 - [sourcemapped-stacktrace](https://github.com/novocaine/sourcemapped-stacktrace)
