@@ -37,7 +37,7 @@ module.exports = function(config) {
           return `webpack:///${path.normalize(info.resourcePath)}`;
         }
       },
-      devtool: 'inline-source-map'
+      devtool: 'source-map'
     },
 
     webpackMiddleware: {
@@ -45,11 +45,12 @@ module.exports = function(config) {
       writeToDisk: true
     },
 
-    client: {
-      stacktrace: {
-        useWorker: false
-      }
-    },
+    // do not use Web Workers for `inline-source-map`
+    // client: {
+    //   stacktrace: {
+    //     useWorker: false
+    //   }
+    // },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
