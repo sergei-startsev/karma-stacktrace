@@ -10,11 +10,11 @@ Test frameworks like [QUnit](https://qunitjs.com/) and [Jasmine](http://jasmine.
 
 An example of an unmapped stacktrace:
 
-![Unmapped stacktrace](./unmapped-stacktrace.png "Unmapped stacktrace")
+![Original stacktrace](./stacktrace-original.png "Original stacktrace")
 
 The framework catches failed tests and reports mapped stacktrace by using [stacktrace-js](https://www.stacktracejs.com/) library:
 
-![Mapped stacktrace](./mapped-stacktrace.png "Mapped stacktrace")
+![Mapped stacktrace](./stacktrace-mapped.png "Mapped stacktrace")
 
 
 ## Install
@@ -61,6 +61,9 @@ module.exports = function(config) {
 - At the moment the framework supports only [Jasmine](http://jasmine.github.io/) and [QUnit](https://qunitjs.com/) testing frameworks.
 - The framework attaches isolated reporters to trace mapped stacktrace, it **does not affect** stacktrace in original messages.
 - It is recommended to set `useWorker` option to `false` value for inline sourcemaps to get mapped stacktrace.
+
+## Examples
+See [examples](https://github.com/sergei-startsev/karma-stacktrace/tree/master/examples) folder for details.
 
 ## Inspired by
 - [sourcemapped-stacktrace](https://github.com/novocaine/sourcemapped-stacktrace)
