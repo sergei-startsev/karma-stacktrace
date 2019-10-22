@@ -34,14 +34,14 @@
     "node": ">= 6.4.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "karma": "^4.1.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-qunit": "^3.1.2",
-    "karma-webpack": "4.0.0-rc.6",
-    "prettier": "^1.17.0",
-    "qunit": "^2.9.2",
+    "eslint": "^6.5.1",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-qunit": "^4.0.0",
+    "karma-webpack": "^4.0.2",
+    "prettier": "^1.18.2",
+    "qunit": "^2.9.3",
     "serve-static": "^1.14.1",
-    "webpack": "^4.31.0"
+    "webpack": "^4.41.2"
   }
 }
