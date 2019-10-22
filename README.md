@@ -1,6 +1,7 @@
 # karma-stacktrace
-[![npm](https://img.shields.io/npm/v/karma-stacktrace.svg?style=flat-square)]()
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/sergei-startsev/karma-stacktrace/master/LICENSE)
+![actions](https://github.com/sergei-startsev/karma-stacktrace/workflows/Node%20CI/badge.svg)
+![npm](https://img.shields.io/npm/v/karma-stacktrace)
+![GitHub](https://img.shields.io/github/license/sergei-startsev/karma-stacktrace)
 
 ## What
 Provides readable mapped stacktrace for failed tests to debug the them in your browser.
