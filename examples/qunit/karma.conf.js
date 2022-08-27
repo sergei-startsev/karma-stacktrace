@@ -2,25 +2,26 @@
 
 const path = require('path');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
     plugins: [
-      'karma-*',
-      require('../../index'),
-      { 'middleware:source-maps': ['factory', require('./middleware')] }
+      'karma-qunit',
+      'karma-webpack',
+      'karma-chrome-launcher',
+      require('../../index')
     ],
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['qunit', 'stacktrace'],
+    frameworks: ['qunit', 'webpack', 'stacktrace'],
 
     // list of files / patterns to load in the browser
-    files: ['*.test.js'],
-
-    // list of files to exclude
-    exclude: [],
+    files: [
+      { pattern: '*.test.js', watched: false },
+      { pattern: 'dist/**', watched: false, included: false, served: true }
+    ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -31,13 +32,28 @@ module.exports = function(config) {
     webpack: {
       mode: 'development',
       output: {
-        // output path is ignored by karma-webpack for now
-        // path: path.join(__dirname, './dist'),
-        devtoolModuleFilenameTemplate: info => {
-          return `webpack:///${path.normalize(info.resourcePath)}`;
-        }
+        filename: '[name].js',
+        path: path.join(__dirname, './dist')
       },
-      devtool: 'source-map'
+      devtool: 'source-map',
+      stats: {
+        modules: false,
+        colors: true
+      },
+      optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+          chunks: 'all',
+          minSize: 0,
+          cacheGroups: {
+            commons: {
+              name: 'commons',
+              chunks: 'initial',
+              minChunks: 1
+            }
+          }
+        }
+      }
     },
 
     webpackMiddleware: {
@@ -81,8 +97,6 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
-
-    middleware: ['source-maps'],
 
     proxies: {
       '/base/': '/'

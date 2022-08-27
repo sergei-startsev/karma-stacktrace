@@ -38,10 +38,10 @@
     "karma": "^6.4.0",
     "karma-chrome-launcher": "^3.1.1",
     "karma-qunit": "^4.1.2",
-    "karma-webpack": "^4.0.2",
+    "karma-webpack": "^5.0.0",
     "prettier": "^2.7.1",
     "qunit": "^2.19.1",
     "serve-static": "^1.15.0",
-    "webpack": "^4.41.2"
+    "webpack": "^5.74.0"
   }
 }
