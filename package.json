@@ -1,6 +1,6 @@
 {
   "name": "karma-stacktrace",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Provides readable mapped stacktrace for failed tests to debug the them in your browser.",
   "main": "index.js",
   "scripts": {
